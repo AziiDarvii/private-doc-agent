@@ -4,7 +4,11 @@
 
 Built for *Build AI agents that own their inference* (#SFTechWeek, Akamai, Oct 12 2026) on the workshop's dedicated GPU: **Qwen/Qwen3-4B served by vLLM on Akamai (Linode LKE).**
 
+**▶ Demo video (2 min):** [video/demo.mp4](video/demo.mp4)
+
 ![screenshot](screenshot.png)
+
+![How a document travels: laptop to your own GPU and back; third-party AI blocked](static/architecture.png)
 
 ## What it does
 
