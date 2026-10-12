@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Private Doc Agent</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Private Doc Agent</h1>
+      <p class="tag">Understand contracts, medical letters and bank papers, using AI that runs on <b>your own GPU</b>. Your document never goes to OpenAI or any third party.</p>
+    </div>
+    <div class="badges">
+      <span class="badge" id="badge-model">Model: …</span>
+      <span class="badge good" id="badge-egress">0 bytes sent to third-party AI</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="main">
+      <div class="card">
+        <div class="card-head">
+          <h2>1 · Your document</h2>
+          <div class="row">
+            <button class="ghost" data-sample="lease.txt">Sample: apartment lease</button>
+            <button class="ghost" data-sample="discharge.txt">Sample: hospital letter</button>
+            <label class="ghost file">Open .txt file<input type="file" id="file" accept=".txt,.md,.csv,text/plain"></label>
+          </div>
+        </div>
+        <textarea id="doc" placeholder="Paste a private document here…"></textarea>
+        <div class="row between">
+          <span class="muted" id="doc-meta">0 characters</span>
+          <button id="analyze" class="primary">Analyze privately</button>
+        </div>
+      </div>
+
+      <div class="card hidden" id="results">
+        <div class="card-head">
+          <h2>2 · What you should know</h2>
+          <span class="muted" id="analysis-meta"></span>
+        </div>
+        <p id="summary" class="summary"></p>
+        <div class="grid2">
+          <div>
+            <h3>Risks &amp; red flags</h3>
+            <ul id="risks" class="risks"></ul>
+          </div>
+          <div>
+            <h3>Key facts</h3>
+            <ul id="facts" class="facts"></ul>
+            <h3>Personal data found <span class="muted">(stayed on your GPU)</span></h3>
+            <ul id="pii" class="pii"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card hidden" id="qa">
+        <div class="card-head"><h2>3 · Ask about it</h2></div>
+        <div id="chat" class="chat"></div>
+        <form id="ask-form" class="row">
+          <input id="question" maxlength="500" placeholder="e.g. Can I end the lease early? What does it cost?" autocomplete="off">
+          <button class="primary" type="submit">Ask</button>
+        </form>
+      </div>
+    </section>
+
+    <aside class="side">
+      <div class="card">
+        <div class="card-head"><h2>Live GPU</h2><span class="dot" id="gpu-dot" title="connection"></span></div>
+        <div class="stats">
+          <div class="stat"><span class="v" id="m-running">–</span><span class="k">answering now</span></div>
+          <div class="stat"><span class="v" id="m-waiting">–</span><span class="k">waiting in line</span></div>
+          <div class="stat"><span class="v" id="m-tps">–</span><span class="k">words/sec (tokens)</span></div>
+          <div class="stat"><span class="v" id="m-ttft">–</span><span class="k">avg time to first word</span></div>
+        </div>
+        <div class="meter-label"><span>GPU memory for conversations (KV cache)</span><b id="m-kv">–</b></div>
+        <div class="meter"><div id="kv-bar"></div></div>
+        <canvas id="spark" height="80" aria-label="tokens per second over time"></canvas>
+        <p class="muted small" id="gpu-error"></p>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><h2>Privacy guard</h2></div>
+        <ul class="kv">
+          <li><span>Bytes sent to third-party AI</span><b id="p-third">0</b></li>
+          <li><span>Blocked leak attempts</span><b id="p-blocked">0</b></li>
+          <li><span>Tokens processed on own GPU</span><b id="p-tokens">0</b></li>
+          <li><span>Allowed hosts</span><b id="p-allow">–</b></li>
+        </ul>
+        <button id="leak" class="ghost wide">Try to leak the document to OpenAI</button>
+        <p class="small" id="leak-result"></p>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><h2>Rush hour test</h2></div>
+        <p class="small muted">Send many users at once and watch the GPU batch them together. KV cache and queue rise live above.</p>
+        <div class="row">
+          <select id="rush-n"><option>16</option><option selected>32</option><option>64</option><option>128</option></select>
+          <button id="rush" class="ghost">Start rush hour</button>
+        </div>
+        <p class="small" id="rush-status"></p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

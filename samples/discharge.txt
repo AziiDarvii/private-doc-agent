@@ -1,0 +1,33 @@
+MISSION BAY COMMUNITY HOSPITAL — DISCHARGE SUMMARY (SYNTHETIC SAMPLE — NOT A REAL PATIENT)
+
+Patient: Eleanor Park    MRN: MB-2209-4471    DOB: March 3, 1945
+Admitted: October 6, 2026    Discharged: October 11, 2026
+Attending: Dr. A. Okafor, Internal Medicine
+Emergency contact: Daniel Park (son), (628) 555-0199, daniel.park@example.com
+Insurance: Medicare, account number 77310452
+
+REASON FOR ADMISSION
+Fall at home at night with a left wrist fracture and confusion. Found to have a urinary tract infection and low sodium (hyponatremia, Na 127).
+
+HOSPITAL COURSE
+Treated with IV antibiotics, switched to oral antibiotics on October 9. Sodium improved to 133 after stopping hydrochlorothiazide. Wrist placed in a cast by orthopedics. Confusion resolved by October 10. Physical therapy evaluated: walks with a walker; high fall risk.
+
+DISCHARGE MEDICATIONS
+- Cefalexin 500 mg by mouth every 12 hours for 5 more days (last dose October 16).
+- Acetaminophen 650 mg every 6 hours as needed for pain. Do not exceed 3,000 mg per day.
+- Amlodipine 5 mg once daily (NEW, replaces hydrochlorothiazide).
+- STOP hydrochlorothiazide. It caused low sodium.
+- Continue apixaban 2.5 mg twice daily for atrial fibrillation. Do not skip doses.
+
+WARNING SIGNS: RETURN TO THE EMERGENCY DEPARTMENT OR CALL 911 IF
+- New confusion, extreme sleepiness, or another fall, especially hitting the head (she is on a blood thinner).
+- Fever above 101°F, burning with urination, or not eating or drinking.
+- Fingers in the cast become cold, blue, numb, or very swollen.
+
+FOLLOW-UP
+- Primary care with Dr. Lin within 7 days: blood test for sodium.
+- Orthopedics cast check on October 20, 2026 at 10:30 AM.
+- Home safety evaluation and night-time supervision recommended. Use the walker at all times and a night light for bathroom trips.
+
+DIET AND ACTIVITY
+Normal diet. Drink 6–8 glasses of fluid daily unless told otherwise. Keep the cast dry. No driving.
